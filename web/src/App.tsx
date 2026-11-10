@@ -49,7 +49,7 @@ function Login({ onDone }: { onDone: () => void }) {
     <div className="grid min-h-full place-items-center px-4 py-10">
       <div className="fixed right-4 top-4"><ThemeToggle /></div>
       <form onSubmit={submit} className="w-full max-w-sm rounded-2xl border border-line bg-surface p-6 shadow-sm">
-        <h1 className="font-display text-3xl font-semibold tracking-tight">Wedding Planner</h1>
+        <h1 className="font-display text-3xl font-semibold tracking-tight">Event Planner</h1>
         <p className="mt-1 text-sm text-muted">Masuk untuk membuka rencana lamaran & pernikahan.</p>
         <label className="mt-5 block text-xs font-medium text-muted" htmlFor="u">Nama</label>
         <input id="u" className="field mt-1" autoComplete="username" value={name} onChange={e => setName(e.target.value)} autoFocus />
@@ -68,7 +68,7 @@ function Shell({ user }: { user: { name: string } }) {
   const [open, setOpen] = useState(false);
   const { data: s } = useSettings();
   const current = NAV.find(n => n.id === hash) ?? NAV[0];
-  const title = s?.groom_name && s?.bride_name ? `${s.groom_name} & ${s.bride_name}` : 'Wedding Planner';
+  const title = 'Event Planner';
   useEffect(() => { setOpen(false); }, [hash]);
   useEffect(() => { document.title = `${current.label} · ${title}`; }, [current, title]);
   const logout = async () => {

@@ -1,4 +1,4 @@
-# Wedding Planner (Lamaran & Wedding)
+# Event Planner (Lamaran & Wedding)
 
 Web app self-hosted: Node.js + Hono + SQLite (server) dan React + Vite + Tailwind (web).
 Fitur dan rencana lengkap ada di [PLAN.md](PLAN.md).

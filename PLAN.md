@@ -140,4 +140,4 @@ wedding/
 - ~~Upload foto inspirasi~~ → ditambahkan sebagai Moodboard (2.7)
 - Perlu fitur lain? (misal denah meja tamu)
 - Domain/subdomain untuk HTTPS sudah ada? Docker sudah terpasang di VPS? Spesifikasi VPS (RAM/disk)?
-- Nama untuk dashboard (misal "Dimas & ___ Wedding Planner")?
+- Nama untuk dashboard (misal "Event Planner")?

@@ -264,4 +264,4 @@ app.get('*', c => {
 });
 
 const port = Number(process.env.PORT || 3000);
-serve({ fetch: app.fetch, port, hostname: process.env.HOST || '127.0.0.1' }, i => console.log(`Wedding planner jalan di http://${i.address}:${i.port}`));
+serve({ fetch: app.fetch, port, hostname: process.env.HOST || '127.0.0.1' }, i => console.log(`Event Planner jalan di http://${i.address}:${i.port}`));
