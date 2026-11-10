@@ -139,19 +139,22 @@ export function DataTable({
             <thead>
               <tr className="border-b border-line bg-sunken text-xs font-medium text-muted">
                 {cols.map(f => <th key={f.key} className={`px-3 py-2 ${f.align === 'right' ? 'text-right' : ''}`}>{f.label}</th>)}
-                <th className="w-12 px-3 py-2"><span className="sr-only">Aksi</span></th>
+                <th className="sticky right-0 w-12 bg-sunken px-3 py-2"><span className="sr-only">Aksi</span></th>
               </tr>
             </thead>
             <tbody>
               {rows.map(r => (
-                <tr key={r.id} className="border-b border-line last:border-0 hover:bg-sunken/60">
+                <tr
+                  key={r.id} className="group cursor-pointer border-b border-line last:border-0 hover:bg-sunken/60"
+                  onClick={e => { if (!(e.target as HTMLElement).closest('select,input,a,button,textarea,label')) setEditing(r); }}
+                >
                   {cols.map(f => (
                     <td key={f.key} className={`max-w-[22rem] px-3 py-2 align-top ${f.align === 'right' ? 'text-right' : ''}`}>
                       <Cell f={f} row={r} onInline={p => edit.mutate({ id: r.id, ...p })} />
                       {f.key === first && r.is_example ? <ExampleTag /> : null}
                     </td>
                   ))}
-                  <td className="px-2 py-1.5 text-right">
+                  <td className="sticky right-0 bg-surface px-2 py-1.5 text-right group-hover:bg-sunken">
                     <Button size="sm" variant="ghost" aria-label={`Ubah ${entity}`} onClick={() => setEditing(r)}>Ubah</Button>
                   </td>
                 </tr>
