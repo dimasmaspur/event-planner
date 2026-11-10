@@ -1,0 +1,23 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "wedding-planner",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": [
+        "-c",
+        "cd server && DATA_DIR=../data WEB_DIR=../web/dist PORT=3000 npx tsx src/index.ts"
+      ],
+      "port": 3000
+    },
+    {
+      "name": "wedding-test",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": [
+        "-c",
+        "rm -rf /tmp/wedding-test-data && mkdir -p /tmp/wedding-test-data && cd server && DATA_DIR=/tmp/wedding-test-data WEB_DIR=../web/dist PORT=3001 npx tsx src/cli.ts create-user penguji ujicoba-12345 && DATA_DIR=/tmp/wedding-test-data WEB_DIR=../web/dist PORT=3001 npx tsx src/index.ts"
+      ],
+      "port": 3001
+    }
+  ]
+}
